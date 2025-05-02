@@ -1,0 +1,704 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F702D4AB2DC536E30012DC5E /* MangomoloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4AA2DC536E30012DC5E /* MangomoloApp.swift */; };
+		F702D4AD2DC536E30012DC5E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4AC2DC536E30012DC5E /* HomeView.swift */; };
+		F702D4AF2DC536EC0012DC5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F702D4AE2DC536EC0012DC5E /* Assets.xcassets */; };
+		F702D4B22DC536EC0012DC5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F702D4B12DC536EC0012DC5E /* Preview Assets.xcassets */; };
+		F702D4BC2DC536EC0012DC5E /* MangomoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4BB2DC536EC0012DC5E /* MangomoloTests.swift */; };
+		F702D4C62DC536EC0012DC5E /* MangomoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4C52DC536EC0012DC5E /* MangomoloUITests.swift */; };
+		F702D4C82DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4C72DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift */; };
+		F702D4D82DC538520012DC5E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4D72DC538520012DC5E /* Media.swift */; };
+		F702D4DC2DC53A090012DC5E /* VerticalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4DB2DC53A090012DC5E /* VerticalCell.swift */; };
+		F702D4DE2DC53B510012DC5E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4DD2DC53B510012DC5E /* Enums.swift */; };
+		F702D4E12DC53C230012DC5E /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4E02DC53C230012DC5E /* PageControl.swift */; };
+		F74250252DC55A6000A57E3E /* VerticalCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250242DC55A6000A57E3E /* VerticalCarousel.swift */; };
+		F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */; };
+		F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B62DC547780048D50C /* PlayerView.swift */; };
+		F7C9F4B92DC5488A0048D50C /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B82DC5488A0048D50C /* PlayerController.swift */; };
+		F7C9F4BB2DC548ED0048D50C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4BA2DC548ED0048D50C /* HomeController.swift */; };
+		F7C9F4BE2DC550FD0048D50C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F7C9F4BD2DC550FD0048D50C /* KeychainAccess */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F702D4B82DC536EC0012DC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F702D49F2DC536E30012DC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F702D4A62DC536E30012DC5E;
+			remoteInfo = Mangomolo;
+		};
+		F702D4C22DC536EC0012DC5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F702D49F2DC536E30012DC5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F702D4A62DC536E30012DC5E;
+			remoteInfo = Mangomolo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F702D4A72DC536E30012DC5E /* Mangomolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangomolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F702D4AA2DC536E30012DC5E /* MangomoloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloApp.swift; sourceTree = "<group>"; };
+		F702D4AC2DC536E30012DC5E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F702D4AE2DC536EC0012DC5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F702D4B12DC536EC0012DC5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F702D4B72DC536EC0012DC5E /* MangomoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangomoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F702D4BB2DC536EC0012DC5E /* MangomoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloTests.swift; sourceTree = "<group>"; };
+		F702D4C12DC536EC0012DC5E /* MangomoloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangomoloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F702D4C52DC536EC0012DC5E /* MangomoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloUITests.swift; sourceTree = "<group>"; };
+		F702D4C72DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F702D4D72DC538520012DC5E /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		F702D4DB2DC53A090012DC5E /* VerticalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCell.swift; sourceTree = "<group>"; };
+		F702D4DD2DC53B510012DC5E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		F702D4E02DC53C230012DC5E /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		F74250242DC55A6000A57E3E /* VerticalCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCarousel.swift; sourceTree = "<group>"; };
+		F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCheckBox.swift; sourceTree = "<group>"; };
+		F7C9F4B62DC547780048D50C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F7C9F4B82DC5488A0048D50C /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		F7C9F4BA2DC548ED0048D50C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F702D4A42DC536E30012DC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7C9F4BE2DC550FD0048D50C /* KeychainAccess in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4B42DC536EC0012DC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4BE2DC536EC0012DC5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F702D49E2DC536E30012DC5E = {
+			isa = PBXGroup;
+			children = (
+				F702D4A92DC536E30012DC5E /* Mangomolo */,
+				F702D4BA2DC536EC0012DC5E /* MangomoloTests */,
+				F702D4C42DC536EC0012DC5E /* MangomoloUITests */,
+				F702D4A82DC536E30012DC5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F702D4A82DC536E30012DC5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4A72DC536E30012DC5E /* Mangomolo.app */,
+				F702D4B72DC536EC0012DC5E /* MangomoloTests.xctest */,
+				F702D4C12DC536EC0012DC5E /* MangomoloUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F702D4A92DC536E30012DC5E /* Mangomolo */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4D62DC537140012DC5E /* Models */,
+				F702D4D52DC5370D0012DC5E /* Controllers */,
+				F702D4D42DC537020012DC5E /* Views */,
+				F702D4AA2DC536E30012DC5E /* MangomoloApp.swift */,
+				F702D4AE2DC536EC0012DC5E /* Assets.xcassets */,
+				F702D4B02DC536EC0012DC5E /* Preview Content */,
+			);
+			path = Mangomolo;
+			sourceTree = "<group>";
+		};
+		F702D4B02DC536EC0012DC5E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4B12DC536EC0012DC5E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F702D4BA2DC536EC0012DC5E /* MangomoloTests */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4BB2DC536EC0012DC5E /* MangomoloTests.swift */,
+			);
+			path = MangomoloTests;
+			sourceTree = "<group>";
+		};
+		F702D4C42DC536EC0012DC5E /* MangomoloUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4C52DC536EC0012DC5E /* MangomoloUITests.swift */,
+				F702D4C72DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift */,
+			);
+			path = MangomoloUITests;
+			sourceTree = "<group>";
+		};
+		F702D4D42DC537020012DC5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4DF2DC53C070012DC5E /* CustomViews */,
+				F702D4DA2DC539D50012DC5E /* Pages */,
+				F702D4D92DC539AB0012DC5E /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F702D4D52DC5370D0012DC5E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7C9F4B82DC5488A0048D50C /* PlayerController.swift */,
+				F7C9F4BA2DC548ED0048D50C /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F702D4D62DC537140012DC5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4D72DC538520012DC5E /* Media.swift */,
+				F702D4DD2DC53B510012DC5E /* Enums.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F702D4D92DC539AB0012DC5E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4DB2DC53A090012DC5E /* VerticalCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F702D4DA2DC539D50012DC5E /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4AC2DC536E30012DC5E /* HomeView.swift */,
+				F7C9F4B62DC547780048D50C /* PlayerView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		F702D4DF2DC53C070012DC5E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F702D4E02DC53C230012DC5E /* PageControl.swift */,
+				F74250242DC55A6000A57E3E /* VerticalCarousel.swift */,
+				F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F702D4A62DC536E30012DC5E /* Mangomolo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F702D4CB2DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "Mangomolo" */;
+			buildPhases = (
+				F702D4A32DC536E30012DC5E /* Sources */,
+				F702D4A42DC536E30012DC5E /* Frameworks */,
+				F702D4A52DC536E30012DC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mangomolo;
+			packageProductDependencies = (
+				F7C9F4BD2DC550FD0048D50C /* KeychainAccess */,
+			);
+			productName = Mangomolo;
+			productReference = F702D4A72DC536E30012DC5E /* Mangomolo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F702D4B62DC536EC0012DC5E /* MangomoloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F702D4CE2DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "MangomoloTests" */;
+			buildPhases = (
+				F702D4B32DC536EC0012DC5E /* Sources */,
+				F702D4B42DC536EC0012DC5E /* Frameworks */,
+				F702D4B52DC536EC0012DC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F702D4B92DC536EC0012DC5E /* PBXTargetDependency */,
+			);
+			name = MangomoloTests;
+			productName = MangomoloTests;
+			productReference = F702D4B72DC536EC0012DC5E /* MangomoloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F702D4C02DC536EC0012DC5E /* MangomoloUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F702D4D12DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "MangomoloUITests" */;
+			buildPhases = (
+				F702D4BD2DC536EC0012DC5E /* Sources */,
+				F702D4BE2DC536EC0012DC5E /* Frameworks */,
+				F702D4BF2DC536EC0012DC5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F702D4C32DC536EC0012DC5E /* PBXTargetDependency */,
+			);
+			name = MangomoloUITests;
+			productName = MangomoloUITests;
+			productReference = F702D4C12DC536EC0012DC5E /* MangomoloUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F702D49F2DC536E30012DC5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F702D4A62DC536E30012DC5E = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F702D4B62DC536EC0012DC5E = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F702D4A62DC536E30012DC5E;
+					};
+					F702D4C02DC536EC0012DC5E = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F702D4A62DC536E30012DC5E;
+					};
+				};
+			};
+			buildConfigurationList = F702D4A22DC536E30012DC5E /* Build configuration list for PBXProject "Mangomolo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F702D49E2DC536E30012DC5E;
+			packageReferences = (
+				F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
+			productRefGroup = F702D4A82DC536E30012DC5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F702D4A62DC536E30012DC5E /* Mangomolo */,
+				F702D4B62DC536EC0012DC5E /* MangomoloTests */,
+				F702D4C02DC536EC0012DC5E /* MangomoloUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F702D4A52DC536E30012DC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F702D4B22DC536EC0012DC5E /* Preview Assets.xcassets in Resources */,
+				F702D4AF2DC536EC0012DC5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4B52DC536EC0012DC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4BF2DC536EC0012DC5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F702D4A32DC536E30012DC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F702D4D82DC538520012DC5E /* Media.swift in Sources */,
+				F74250252DC55A6000A57E3E /* VerticalCarousel.swift in Sources */,
+				F702D4AD2DC536E30012DC5E /* HomeView.swift in Sources */,
+				F7C9F4B92DC5488A0048D50C /* PlayerController.swift in Sources */,
+				F702D4E12DC53C230012DC5E /* PageControl.swift in Sources */,
+				F702D4DE2DC53B510012DC5E /* Enums.swift in Sources */,
+				F7C9F4BB2DC548ED0048D50C /* HomeController.swift in Sources */,
+				F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */,
+				F702D4AB2DC536E30012DC5E /* MangomoloApp.swift in Sources */,
+				F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */,
+				F702D4DC2DC53A090012DC5E /* VerticalCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4B32DC536EC0012DC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F702D4BC2DC536EC0012DC5E /* MangomoloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F702D4BD2DC536EC0012DC5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F702D4C82DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift in Sources */,
+				F702D4C62DC536EC0012DC5E /* MangomoloUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F702D4B92DC536EC0012DC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F702D4A62DC536E30012DC5E /* Mangomolo */;
+			targetProxy = F702D4B82DC536EC0012DC5E /* PBXContainerItemProxy */;
+		};
+		F702D4C32DC536EC0012DC5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F702D4A62DC536E30012DC5E /* Mangomolo */;
+			targetProxy = F702D4C22DC536EC0012DC5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F702D4C92DC536EC0012DC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F702D4CA2DC536EC0012DC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F702D4CC2DC536EC0012DC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mangomolo/Preview Content\"";
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F702D4CD2DC536EC0012DC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mangomolo/Preview Content\"";
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F702D4CF2DC536EC0012DC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo.MangomoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mangomolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mangomolo";
+			};
+			name = Debug;
+		};
+		F702D4D02DC536EC0012DC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo.MangomoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mangomolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mangomolo";
+			};
+			name = Release;
+		};
+		F702D4D22DC536EC0012DC5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo.MangomoloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mangomolo;
+			};
+			name = Debug;
+		};
+		F702D4D32DC536EC0012DC5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 82VG356JK2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charbelyoussef.mangomolo.MangomoloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mangomolo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F702D4A22DC536E30012DC5E /* Build configuration list for PBXProject "Mangomolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F702D4C92DC536EC0012DC5E /* Debug */,
+				F702D4CA2DC536EC0012DC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F702D4CB2DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "Mangomolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F702D4CC2DC536EC0012DC5E /* Debug */,
+				F702D4CD2DC536EC0012DC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F702D4CE2DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "MangomoloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F702D4CF2DC536EC0012DC5E /* Debug */,
+				F702D4D02DC536EC0012DC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F702D4D12DC536EC0012DC5E /* Build configuration list for PBXNativeTarget "MangomoloUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F702D4D22DC536EC0012DC5E /* Debug */,
+				F702D4D32DC536EC0012DC5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7C9F4BD2DC550FD0048D50C /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F702D49F2DC536E30012DC5E /* Project object */;
+}
