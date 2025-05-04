@@ -13,4 +13,5 @@ struct Media: Identifiable {
     var image: String
     var name: String
     var url: String
+    var adTagUrl: String
 }

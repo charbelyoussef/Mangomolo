@@ -15,14 +15,15 @@
 		F702D4C62DC536EC0012DC5E /* MangomoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4C52DC536EC0012DC5E /* MangomoloUITests.swift */; };
 		F702D4C82DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4C72DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift */; };
 		F702D4D82DC538520012DC5E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4D72DC538520012DC5E /* Media.swift */; };
-		F702D4DC2DC53A090012DC5E /* VerticalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4DB2DC53A090012DC5E /* VerticalCell.swift */; };
+		F702D4DC2DC53A090012DC5E /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4DB2DC53A090012DC5E /* MediaCell.swift */; };
 		F702D4DE2DC53B510012DC5E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4DD2DC53B510012DC5E /* Enums.swift */; };
 		F702D4E12DC53C230012DC5E /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702D4E02DC53C230012DC5E /* PageControl.swift */; };
-		F74250252DC55A6000A57E3E /* VerticalCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250242DC55A6000A57E3E /* VerticalCarousel.swift */; };
 		F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */; };
+		F742502A2DC5715C00A57E3E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250292DC5715C00A57E3E /* Utils.swift */; };
+		F742502D2DC5745300A57E3E /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = F742502C2DC5745300A57E3E /* GoogleInteractiveMediaAds */; };
+		F74250302DC7593400A57E3E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742502F2DC7593400A57E3E /* PlayerViewModel.swift */; };
 		F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B62DC547780048D50C /* PlayerView.swift */; };
-		F7C9F4B92DC5488A0048D50C /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B82DC5488A0048D50C /* PlayerController.swift */; };
-		F7C9F4BB2DC548ED0048D50C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4BA2DC548ED0048D50C /* HomeController.swift */; };
+		F7C9F4B92DC5488A0048D50C /* PlayerControllerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */; };
 		F7C9F4BE2DC550FD0048D50C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F7C9F4BD2DC550FD0048D50C /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
@@ -55,14 +56,15 @@
 		F702D4C52DC536EC0012DC5E /* MangomoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloUITests.swift; sourceTree = "<group>"; };
 		F702D4C72DC536EC0012DC5E /* MangomoloUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangomoloUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F702D4D72DC538520012DC5E /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		F702D4DB2DC53A090012DC5E /* VerticalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCell.swift; sourceTree = "<group>"; };
+		F702D4DB2DC53A090012DC5E /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		F702D4DD2DC53B510012DC5E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		F702D4E02DC53C230012DC5E /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
-		F74250242DC55A6000A57E3E /* VerticalCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCarousel.swift; sourceTree = "<group>"; };
 		F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCheckBox.swift; sourceTree = "<group>"; };
+		F74250292DC5715C00A57E3E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F742502F2DC7593400A57E3E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		F74250312DC7699300A57E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7C9F4B62DC547780048D50C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		F7C9F4B82DC5488A0048D50C /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
-		F7C9F4BA2DC548ED0048D50C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControllerTemp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F742502D2DC5745300A57E3E /* GoogleInteractiveMediaAds in Frameworks */,
 				F7C9F4BE2DC550FD0048D50C /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,8 +117,10 @@
 		F702D4A92DC536E30012DC5E /* Mangomolo */ = {
 			isa = PBXGroup;
 			children = (
+				F74250312DC7699300A57E3E /* Info.plist */,
+				F742502E2DC758D700A57E3E /* ViewModels */,
+				F74250282DC5714B00A57E3E /* Helpers */,
 				F702D4D62DC537140012DC5E /* Models */,
-				F702D4D52DC5370D0012DC5E /* Controllers */,
 				F702D4D42DC537020012DC5E /* Views */,
 				F702D4AA2DC536E30012DC5E /* MangomoloApp.swift */,
 				F702D4AE2DC536EC0012DC5E /* Assets.xcassets */,
@@ -159,15 +164,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F702D4D52DC5370D0012DC5E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F7C9F4B82DC5488A0048D50C /* PlayerController.swift */,
-				F7C9F4BA2DC548ED0048D50C /* HomeController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		F702D4D62DC537140012DC5E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +176,7 @@
 		F702D4D92DC539AB0012DC5E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F702D4DB2DC53A090012DC5E /* VerticalCell.swift */,
+				F702D4DB2DC53A090012DC5E /* MediaCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -198,10 +194,26 @@
 			isa = PBXGroup;
 			children = (
 				F702D4E02DC53C230012DC5E /* PageControl.swift */,
-				F74250242DC55A6000A57E3E /* VerticalCarousel.swift */,
 				F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		F74250282DC5714B00A57E3E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F74250292DC5715C00A57E3E /* Utils.swift */,
+				F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F742502E2DC758D700A57E3E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F742502F2DC7593400A57E3E /* PlayerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +234,7 @@
 			name = Mangomolo;
 			packageProductDependencies = (
 				F7C9F4BD2DC550FD0048D50C /* KeychainAccess */,
+				F742502C2DC5745300A57E3E /* GoogleInteractiveMediaAds */,
 			);
 			productName = Mangomolo;
 			productReference = F702D4A72DC536E30012DC5E /* Mangomolo.app */;
@@ -297,6 +310,7 @@
 			mainGroup = F702D49E2DC536E30012DC5E;
 			packageReferences = (
 				F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				F742502B2DC5745300A57E3E /* XCRemoteSwiftPackageReference "swift-package-manager-google-interactive-media-ads-ios" */,
 			);
 			productRefGroup = F702D4A82DC536E30012DC5E /* Products */;
 			projectDirPath = "";
@@ -341,16 +355,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F702D4D82DC538520012DC5E /* Media.swift in Sources */,
-				F74250252DC55A6000A57E3E /* VerticalCarousel.swift in Sources */,
 				F702D4AD2DC536E30012DC5E /* HomeView.swift in Sources */,
-				F7C9F4B92DC5488A0048D50C /* PlayerController.swift in Sources */,
+				F7C9F4B92DC5488A0048D50C /* PlayerControllerTemp.swift in Sources */,
 				F702D4E12DC53C230012DC5E /* PageControl.swift in Sources */,
 				F702D4DE2DC53B510012DC5E /* Enums.swift in Sources */,
-				F7C9F4BB2DC548ED0048D50C /* HomeController.swift in Sources */,
 				F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */,
 				F702D4AB2DC536E30012DC5E /* MangomoloApp.swift in Sources */,
 				F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */,
-				F702D4DC2DC53A090012DC5E /* VerticalCell.swift in Sources */,
+				F702D4DC2DC53A090012DC5E /* MediaCell.swift in Sources */,
+				F742502A2DC5715C00A57E3E /* Utils.swift in Sources */,
+				F74250302DC7593400A57E3E /* PlayerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +531,7 @@
 				DEVELOPMENT_TEAM = 82VG356JK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mangomolo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -546,6 +561,7 @@
 				DEVELOPMENT_TEAM = 82VG356JK2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mangomolo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -682,6 +698,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F742502B2DC5745300A57E3E /* XCRemoteSwiftPackageReference "swift-package-manager-google-interactive-media-ads-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-interactive-media-ads-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
@@ -693,6 +717,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F742502C2DC5745300A57E3E /* GoogleInteractiveMediaAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F742502B2DC5745300A57E3E /* XCRemoteSwiftPackageReference "swift-package-manager-google-interactive-media-ads-ios" */;
+			productName = GoogleInteractiveMediaAds;
+		};
 		F7C9F4BD2DC550FD0048D50C /* KeychainAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7C9F4BC2DC550FD0048D50C /* XCRemoteSwiftPackageReference "KeychainAccess" */;

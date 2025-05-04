@@ -3,4 +3,86 @@
    uuid = "3394A842-4F11-46FC-9EE9-4A27FE0B75F8"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3270F94-0D3B-4FBF-A943-46008D9ED121"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mangomolo/ViewModels/PlayerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "270B2AF0-5588-4084-9611-F02F17500B79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mangomolo/ViewModels/PlayerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C567A5D-1D0E-4672-AEAF-8BE8C61523E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mangomolo/ViewModels/PlayerViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "PlayerViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0C567A5D-1D0E-4672-AEAF-8BE8C61523E1 - 5e072f5387ce8ceb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mangomolo.PlayerViewModel.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mangomolo.PlayerViewModel&gt;"
+                  moduleName = "Mangomolo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charbelyoussef/Documents/Team%20Projects/iOS%20Projects/Mangomolo/Mangomolo/ViewModels/PlayerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "0C567A5D-1D0E-4672-AEAF-8BE8C61523E1 - cf41f8392a161652"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mangomolo.PlayerViewModel.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Mangomolo.PlayerViewModel&gt;"
+                  moduleName = "Mangomolo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/charbelyoussef/Documents/Team%20Projects/iOS%20Projects/Mangomolo/Mangomolo/ViewModels/PlayerViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
