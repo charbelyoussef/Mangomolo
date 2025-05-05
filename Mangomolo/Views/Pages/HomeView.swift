@@ -6,78 +6,123 @@
 //
 
 import SwiftUI
-import KeychainAccess
 
 struct HomeView: View {
     @State private var currentIndex: Int = 0
-    
-    
+    @State private var enablePurpleMode: Bool = false
+    @State private var isJiggling = false
+    @State private var jiggleAngle: Double = 0
+    @State private var jiggleTimer: Timer?
+    @State private var stopTimer: Timer?
+    let jiggleDuration: TimeInterval = 4.0
     
     var body: some View {
         NavigationView {
-            
-            VStack(alignment: .center) {
-                //Subscription struct that handles fetching data from keychain in order to check subscription status
-                SubscriptionCheckBox()
-                    .frame(maxHeight: 80)
+            ZStack {
+                enablePurpleMode ? Color.purple.ignoresSafeArea() : Color.white.ignoresSafeArea()
                 
-                // Title for Vertical Carousel
-                HStack {
-                    Text("Vertical Sample")
-                        .foregroundColor(.black)
-                        .font(.system(size: 18, weight: .bold))
-                        .truncationMode(.tail)
-                        .lineLimit(2)
-                    Spacer()
-                }
-                
-                // ScrollView that contains all the vertical elements from the Constants class
-                ScrollView (.horizontal){
+                VStack(alignment: .center) {
+                    //Subscription struct that handles fetching data from keychain in order to check subscription status
+                    SubscriptionCheckBox()
+                        .frame(maxHeight: 80)
+                        .padding()
+                    
+                    // Title for Vertical Carousel
                     HStack {
-                        ForEach(Constants.mediaVerticalElements) { media in
-                            MediaCellView(media: media, orientation: .vertical, currentIndex: $currentIndex, geometry: nil)
+                        Text("Vertical Sample")
+                            .foregroundColor(.black)
+                            .font(.system(size: 18, weight: .bold))
+                            .truncationMode(.tail)
+                            .lineLimit(2)
+                        Spacer()
+                    }
+                    
+                    // ScrollView that contains all the vertical elements from the Constants class
+                    ScrollView (.horizontal){
+                        HStack {
+                            ForEach(Constants.mediaVerticalElements) { media in
+                                MediaCellView(media: media, 
+                                              orientation: .vertical,
+                                              enablePurpleMode: enablePurpleMode,
+                                              currentIndex: $currentIndex,
+                                              geometry: nil)
+                            }
                         }
                     }
-                }
-                
-                // Title for Horizontal Carousel
-                HStack {
-                    Text("Horizontal Sample")
-                        .foregroundColor(.black)
-                        .font(.system(size: 18, weight: .bold))
-                        .truncationMode(.tail)
-                        .lineLimit(2)
-                    Spacer()
-                }
-                
-                // ScrollView that contains all the horizontal elements from the Constants class
-                ScrollView (.horizontal){
+                    
+                    // Title for Horizontal Carousel
                     HStack {
-                        ForEach(Constants.mediahorizontalElements) { media in
-                            MediaCellView(media: media, orientation: .horizontal, currentIndex: $currentIndex, geometry: nil)
+                        Text("Horizontal Sample")
+                            .foregroundColor(.black)
+                            .font(.system(size: 18, weight: .bold))
+                            .truncationMode(.tail)
+                            .lineLimit(2)
+                        Spacer()
+                    }
+                    
+                    // ScrollView that contains all the horizontal elements from the Constants class
+                    ScrollView (.horizontal){
+                        HStack {
+                            ForEach(Constants.mediahorizontalElements) { media in
+                                MediaCellView(media: media,
+                                              orientation: .horizontal,
+                                              enablePurpleMode: enablePurpleMode,
+                                              currentIndex: $currentIndex,
+                                              geometry: nil)
+                            }
                         }
                     }
+                    
+                    Spacer()
+                    Menu {
+                        Button(enablePurpleMode ? "Light Mode" : "Purple Mode", action: { enablePurpleMode.toggle() })
+                        Button("Make It Dance!!", action: { startJiggleWithAutoStop() })
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                    }
+                    Spacer()
                 }
-                
-                //                PageControl(index: $currentIndex, maxIndex: ((mediaElements.count > 1) ? (mediaElements.count - 1) : 0))
-                //                    .frame(maxHeight: 15)
-                
-                Spacer()
-                Menu {
-                    Button("Option 1", action: { print("Option 1 selected") })
-                    Button("Option 2", action: { print("Option 2 selected") })
-                    Button("Option 3", action: { print("Option 3 selected") })
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                        .font(.title)
-                        .foregroundColor(.blue)
-                }
-                
+                .padding(.horizontal, 16)
+                .navigationBarTitle(Text("Homepage"), displayMode: .automatic)
             }
-            .padding(.horizontal, 16)
-            .navigationBarTitle(Text("Homepage"), displayMode: .automatic)
+            .rotationEffect(.degrees(jiggleAngle))
+            
+        }
+        .onDisappear {
+            stopJiggle()
+        }
+    }
+    
+    func startJiggleWithAutoStop() {
+        guard !isJiggling else { return }
+        
+        isJiggling = true
+        
+        // Start jiggle animation
+        jiggleTimer = Timer.scheduledTimer(withTimeInterval: 0.12, repeats: true) { _ in
+            withAnimation(.easeInOut(duration: 0.12)) {
+                jiggleAngle = jiggleAngle == 2 ? -2 : 2
+            }
         }
         
+        // Schedule auto-stop
+        stopTimer = Timer.scheduledTimer(withTimeInterval: jiggleDuration, repeats: false) { _ in
+            stopJiggle()
+        }
+    }
+    
+    func stopJiggle() {
+        isJiggling = false
+        jiggleTimer?.invalidate()
+        stopTimer?.invalidate()
+        jiggleTimer = nil
+        stopTimer = nil
+        
+        withAnimation {
+            jiggleAngle = 0
+        }
     }
 }
 

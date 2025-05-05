@@ -11,6 +11,7 @@ import SwiftUI
 struct MediaCellView: View {
     let media: Media
     let orientation: MediaCellOrientation
+    let enablePurpleMode: Bool
     
     @Binding var currentIndex: Int
     let geometry: GeometryProxy?
@@ -21,7 +22,7 @@ struct MediaCellView: View {
 
 //        let offset = mediaWidth/2 //(geometry.size.width - mediaWidth) / 2
         
-        NavigationLink(destination: PlayerView(mediaPassed: media)) {
+        NavigationLink(destination: PlayerView( enablePurpleMode: enablePurpleMode, media: media)) {
             ZStack {
                 Image(media.image)
                     .resizable()

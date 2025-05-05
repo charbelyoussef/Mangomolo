@@ -21,9 +21,8 @@
 		F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */; };
 		F742502A2DC5715C00A57E3E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250292DC5715C00A57E3E /* Utils.swift */; };
 		F742502D2DC5745300A57E3E /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = F742502C2DC5745300A57E3E /* GoogleInteractiveMediaAds */; };
-		F74250302DC7593400A57E3E /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742502F2DC7593400A57E3E /* PlayerViewModel.swift */; };
+		F74250352DC7B8DA00A57E3E /* PlayerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74250342DC7B8DA00A57E3E /* PlayerContainerViewController.swift */; };
 		F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B62DC547780048D50C /* PlayerView.swift */; };
-		F7C9F4B92DC5488A0048D50C /* PlayerControllerTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */; };
 		F7C9F4BE2DC550FD0048D50C /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = F7C9F4BD2DC550FD0048D50C /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +60,9 @@
 		F702D4E02DC53C230012DC5E /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		F74250262DC55C3F00A57E3E /* SubscriptionCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionCheckBox.swift; sourceTree = "<group>"; };
 		F74250292DC5715C00A57E3E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		F742502F2DC7593400A57E3E /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		F74250312DC7699300A57E3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F74250342DC7B8DA00A57E3E /* PlayerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerContainerViewController.swift; sourceTree = "<group>"; };
 		F7C9F4B62DC547780048D50C /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControllerTemp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				F74250312DC7699300A57E3E /* Info.plist */,
-				F742502E2DC758D700A57E3E /* ViewModels */,
 				F74250282DC5714B00A57E3E /* Helpers */,
 				F702D4D62DC537140012DC5E /* Models */,
 				F702D4D42DC537020012DC5E /* Views */,
@@ -184,6 +181,7 @@
 		F702D4DA2DC539D50012DC5E /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F74250342DC7B8DA00A57E3E /* PlayerContainerViewController.swift */,
 				F702D4AC2DC536E30012DC5E /* HomeView.swift */,
 				F7C9F4B62DC547780048D50C /* PlayerView.swift */,
 			);
@@ -203,17 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				F74250292DC5715C00A57E3E /* Utils.swift */,
-				F7C9F4B82DC5488A0048D50C /* PlayerControllerTemp.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F742502E2DC758D700A57E3E /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				F742502F2DC7593400A57E3E /* PlayerViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,15 +345,14 @@
 			files = (
 				F702D4D82DC538520012DC5E /* Media.swift in Sources */,
 				F702D4AD2DC536E30012DC5E /* HomeView.swift in Sources */,
-				F7C9F4B92DC5488A0048D50C /* PlayerControllerTemp.swift in Sources */,
 				F702D4E12DC53C230012DC5E /* PageControl.swift in Sources */,
 				F702D4DE2DC53B510012DC5E /* Enums.swift in Sources */,
+				F74250352DC7B8DA00A57E3E /* PlayerContainerViewController.swift in Sources */,
 				F74250272DC55C3F00A57E3E /* SubscriptionCheckBox.swift in Sources */,
 				F702D4AB2DC536E30012DC5E /* MangomoloApp.swift in Sources */,
 				F7C9F4B72DC547780048D50C /* PlayerView.swift in Sources */,
 				F702D4DC2DC53A090012DC5E /* MediaCell.swift in Sources */,
 				F742502A2DC5715C00A57E3E /* Utils.swift in Sources */,
-				F74250302DC7593400A57E3E /* PlayerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

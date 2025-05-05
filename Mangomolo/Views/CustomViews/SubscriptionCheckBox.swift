@@ -11,7 +11,7 @@ import KeychainAccess
 
 struct SubscriptionCheckBox: View {
     @State private var isChecked: Bool = false
-
+    
     var body: some View {
         ZStack{
             
@@ -19,8 +19,8 @@ struct SubscriptionCheckBox: View {
             
             VStack {
                 Button(action: {
-//                    isChecked.toggle()
-//                    saveCheckBoxValueToKeychain(isChecked)
+                    //                    isChecked.toggle()
+                    //                    saveCheckBoxValueToKeychain(isChecked)
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
                         isChecked.toggle()
                         Utils().saveCheckBoxValueToKeychain(isChecked)
@@ -46,15 +46,17 @@ struct SubscriptionCheckBox: View {
                 Text("Subscribed: \(isChecked.description)")
                     .foregroundColor(.white)
                     .font(.system(size: 15, weight: .bold))
-
+                
             }
-
+            
         }
         .onAppear {
             let isSubscribed = Utils().loadCheckBoxValueFromKeychain()
             isChecked = isSubscribed
         }
         .cornerRadius(12)
+        
+        
     }
     
     

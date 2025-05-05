@@ -8,10 +8,12 @@
 import Foundation
 
 
+
 struct Media: Identifiable {
     var id: Int
     var image: String
     var name: String
     var url: String
     var adTagUrl: String
+    var adType: IMAAdType
 }

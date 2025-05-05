@@ -11,3 +11,9 @@ enum MediaCellOrientation {
     case vertical
     case horizontal
 }
+
+enum IMAAdType {
+    case preRoll
+    case postRoll
+    case midRoll
+}
