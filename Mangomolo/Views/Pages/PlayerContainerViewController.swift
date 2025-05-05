@@ -320,7 +320,10 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     
     func adsManagerDidRequestContentResume(_ adsManager: IMAAdsManager) {
         // The SDK is done playing ads (at least for now), so resume the content.
-        play(sender: playPauseButton)
+        if(media?.adType == .preRoll){
+            play(sender: playPauseButton)
+
+        }
     }
     
     // MARK: - deinit
