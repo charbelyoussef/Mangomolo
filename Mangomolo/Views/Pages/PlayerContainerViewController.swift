@@ -24,6 +24,9 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     private var didFinishPlayingContentAlready = false
     private var didRequestPostRollAlready = false
     
+    
+    private var timeObserver: Any?
+    
     private lazy var videoView: UIView = {
         let videoView = UIView()
         videoView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +60,35 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    // MARK: - Mid-Roll functions
+    private func observeMidRollTrigger() {
+        timeObserver = contentPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1),
+                                                      queue: .main) { [weak self] time in
+            if time.seconds >= 10 {
+                self?.requestAds()
+            }
+        }
+    }
+    
+//    private func triggerMidRoll() {
+//        guard timeObserver != nil else { return }
+//        
+//        // Remove observer to prevent repeated ads
+//        contentPlayer.removeTimeObserver(timeObserver!)
+//        timeObserver = nil
+//        
+//        contentPlayer.pause()
+//        
+//        let adDisplayContainer = IMAAdDisplayContainer(
+//            adContainer: videoView, viewController: self, companionSlots: nil)
+//        let request = IMAAdsRequest(adTagUrl: media!.adTagUrl,
+//                                    adDisplayContainer: adDisplayContainer,
+//                                    contentPlayhead: contentPlayhead,
+//                                    userContext: nil)
+//        adsLoader.requestAds(with: request)
+//    }
+    
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +110,10 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         
         if(media?.adType == .preRoll){
             requestAds()
+        }
+        
+        if(media?.adType == .midRoll){
+            observeMidRollTrigger()
         }
     }
     
@@ -177,7 +213,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     func play(sender: UIButton){
         sender.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         contentPlayer.play()
-
+        
     }
     
     func pause(sender: UIButton){
@@ -243,6 +279,17 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
             return
         }
         
+        
+        if(media?.adType == .midRoll){
+            guard timeObserver != nil else { return }
+            
+            // Remove observer to prevent repeated ads
+            contentPlayer.removeTimeObserver(timeObserver!)
+            timeObserver = nil
+            
+            contentPlayer.pause()
+
+        }
         // Create ad display container for ad rendering.
         let adDisplayContainer = IMAAdDisplayContainer(
             adContainer: videoView, viewController: self, companionSlots: nil)
@@ -255,6 +302,8 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         
         adsLoader.requestAds(with: request)
     }
+    
+    
     
     
     // MARK: - Content player methods
@@ -289,7 +338,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         if let message = adErrorData.adError.message {
             print("Error loading ads: \(message)")
         }
-//        contentPlayer.play()
+        //        contentPlayer.play()
         play(sender: playPauseButton)
     }
     
@@ -299,6 +348,9 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         if event.type == IMAAdEventType.LOADED {
             adsManager.start()
         }
+        if event.type == IMAAdEventType.COMPLETE {
+            print("IMAAdEventType.COMPLETE : COMPLETEEEE")
+        }
     }
     
     func adsManager(_ adsManager: IMAAdsManager, didReceive error: IMAAdError) {
@@ -307,22 +359,21 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         if let message = error.message {
             print("AdsManager error: \(message)")
         }
-//        contentPlayer.play()
+        //        contentPlayer.play()
         play(sender: playPauseButton)
     }
     
     func adsManagerDidRequestContentPause(_ adsManager: IMAAdsManager) {
         // The SDK is going to play ads, so pause the content.
-//        contentPlayer.pause()
+        //        contentPlayer.pause()
         pause(sender: playPauseButton)
-
+        
     }
     
     func adsManagerDidRequestContentResume(_ adsManager: IMAAdsManager) {
         // The SDK is done playing ads (at least for now), so resume the content.
-        if(media?.adType == .preRoll){
+        if(media?.adType == .preRoll || media?.adType == .midRoll){
             play(sender: playPauseButton)
-
         }
     }
     
