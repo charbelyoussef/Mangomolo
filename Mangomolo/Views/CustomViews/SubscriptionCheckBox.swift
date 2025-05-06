@@ -19,8 +19,6 @@ struct SubscriptionCheckBox: View {
             
             VStack {
                 Button(action: {
-                    //                    isChecked.toggle()
-                    //                    saveCheckBoxValueToKeychain(isChecked)
                     withAnimation(.spring(response: 0.4, dampingFraction: 0.5)) {
                         isChecked.toggle()
                         Utils().saveCheckBoxValueToKeychain(isChecked)
@@ -28,14 +26,14 @@ struct SubscriptionCheckBox: View {
                 }) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
-                            .strokeBorder(Color.gray, lineWidth: 2)
+                            .strokeBorder(Color.white, lineWidth: 2)
                             .background(Color.clear)
                             .frame(width: 40, height: 40)
                         
                         if isChecked {
                             Image(systemName: "checkmark")
                                 .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.blue)
+                                .foregroundColor(.white)
                                 .transition(.scale.combined(with: .opacity))
                                 .rotationEffect(.degrees(isChecked ? 0 : -90))
                         }

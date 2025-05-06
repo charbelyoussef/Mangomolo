@@ -19,14 +19,7 @@ struct PlayerView: View {
             enablePurpleMode ? Color.purple.ignoresSafeArea() : Color.white.ignoresSafeArea()
             
             VStack {
-                ZStack {
-                    PlayerViewWrapper(
-                        media: media)
-                }
-                .aspectRatio(16 / 9, contentMode: .fit)
-                .padding()
-
-                Spacer()
+                PlayerViewWrapper(media: media)
             }
             .navigationTitle("Media Player")
             .navigationBarTitleDisplayMode(.inline)
@@ -35,6 +28,7 @@ struct PlayerView: View {
     }
 }
 
+// Wrapper to to create a connection between SwiftUI and UIKit ("PlayerView" & "PlayerContainerViewController")
 private struct PlayerViewWrapper: UIViewControllerRepresentable {
     typealias UIViewControllerType = PlayerContainerViewController
     

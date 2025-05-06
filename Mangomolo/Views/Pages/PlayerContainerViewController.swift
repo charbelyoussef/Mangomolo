@@ -15,17 +15,14 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     private let adsLoader = IMAAdsLoader()
     private var adsManager: IMAAdsManager?
     private var contentPlayer = AVPlayer()
-    
+    private var didFinishPlayingContentAlready = false
+    private var timeObserver: Any?
+
     let playPauseButton = UIButton(type: .system)
     let muteUnmuteButton = UIButton(type: .system)
     let seekForwardButton = UIButton(type: .system)
     let seekBackwardButton = UIButton(type: .system)
-    
-    private var didFinishPlayingContentAlready = false
-    private var didRequestPostRollAlready = false
-    
-    
-    private var timeObserver: Any?
+    var buttonStack = UIStackView()
     
     private lazy var videoView: UIView = {
         let videoView = UIView()
@@ -60,35 +57,6 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    // MARK: - Mid-Roll functions
-    private func observeMidRollTrigger() {
-        timeObserver = contentPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1),
-                                                      queue: .main) { [weak self] time in
-            if time.seconds >= 10 {
-                self?.requestAds()
-            }
-        }
-    }
-    
-//    private func triggerMidRoll() {
-//        guard timeObserver != nil else { return }
-//        
-//        // Remove observer to prevent repeated ads
-//        contentPlayer.removeTimeObserver(timeObserver!)
-//        timeObserver = nil
-//        
-//        contentPlayer.pause()
-//        
-//        let adDisplayContainer = IMAAdDisplayContainer(
-//            adContainer: videoView, viewController: self, companionSlots: nil)
-//        let request = IMAAdsRequest(adTagUrl: media!.adTagUrl,
-//                                    adDisplayContainer: adDisplayContainer,
-//                                    contentPlayhead: contentPlayhead,
-//                                    userContext: nil)
-//        adsLoader.requestAds(with: request)
-//    }
-    
     // MARK: - View controller lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,8 +85,37 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        contentPlayer.pause()
+        adsManager?.destroy()
+        adsManager = nil
+    }
+    
+    override func viewWillTransition(
+        to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
+    ) {
+        coordinator.animate { _ in
+            // do nothing
+        } completion: { _ in
+            self.playerLayer.frame = self.videoView.layer.bounds
+        }
+    }
+    
+    
+    // MARK: - Mid-Roll functions
+    private func observeMidRollTrigger() {
+        timeObserver = contentPlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1),
+                                                      queue: .main) { [weak self] time in
+            if time.seconds >= 10 {
+                self?.requestAds()
+            }
+        }
+    }
+    
+    // MARK: UI Design helper methods
     func generateButtonsStack(){
-        let buttonStack = UIStackView(arrangedSubviews: [generateSeekBackwardButton(), generatePlayPauseButton(), generateMuteButton(), generateSeekForwardButton()])
+        buttonStack = UIStackView(arrangedSubviews: [generateSeekBackwardButton(), generatePlayPauseButton(), generateMuteButton(), generateSeekForwardButton()])
         buttonStack.axis = .horizontal
         buttonStack.alignment = .center
         buttonStack.distribution = .equalSpacing
@@ -130,8 +127,10 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         
         // Center in the view
         NSLayoutConstraint.activate([
+            buttonStack.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             buttonStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonStack.centerYAnchor.constraint(equalTo: view.centerYAnchor), //, constant: 150
+
         ])
     }
     
@@ -174,27 +173,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         
         return seekBackwardButton
     }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        contentPlayer.pause()
-        adsManager?.destroy()
-        adsManager = nil
-    }
-    
-    override func viewWillTransition(
-        to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
-    ) {
-        coordinator.animate { _ in
-            // do nothing
-        } completion: { _ in
-            self.playerLayer.frame = self.videoView.layer.bounds
-        }
-    }
-    
-    // MARK: - Public methods
-    
+        
     // MARK: - AVPlayer Controls Methods
     @objc func playButtonTapped(button: UIButton) {
         playPause(sender: button)
@@ -213,7 +192,6 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     func play(sender: UIButton){
         sender.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         contentPlayer.play()
-        
     }
     
     func pause(sender: UIButton){
@@ -234,7 +212,6 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         else{
             sender.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
         }
-        
         contentPlayer.isMuted.toggle()
     }
     
@@ -242,6 +219,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     @objc func seekForwardButtonTapped(button: UIButton) {
         seekForward(sender: button)
     }
+    
     func seekForward(sender: UIButton){
         guard let duration  = contentPlayer.currentItem?.duration else {
             return
@@ -278,8 +256,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         if(isSubscribed == true) {
             return
         }
-        
-        
+
         if(media?.adType == .midRoll){
             guard timeObserver != nil else { return }
             
@@ -288,7 +265,6 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
             timeObserver = nil
             
             contentPlayer.pause()
-
         }
         // Create ad display container for ad rendering.
         let adDisplayContainer = IMAAdDisplayContainer(
@@ -303,9 +279,6 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         adsLoader.requestAds(with: request)
     }
     
-    
-    
-    
     // MARK: - Content player methods
     @objc func contentDidFinishPlaying(_ notification: Notification) {
         // Make sure we don't call contentComplete as a result of an ad completing.
@@ -316,11 +289,13 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
             if(media?.adType == .postRoll){
                 requestAds()
             }
+            if(media?.adType == .midRoll){
+                observeMidRollTrigger()
+            }
         }
     }
     
     // MARK: - IMAAdsLoaderDelegate
-    
     func adsLoader(_ loader: IMAAdsLoader, adsLoadedWith adsLoadedData: IMAAdsLoadedData) {
         // Grab the instance of the IMAAdsManager and set ourselves as the delegate.
         adsManager = adsLoadedData.adsManager
@@ -366,12 +341,14 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
     func adsManagerDidRequestContentPause(_ adsManager: IMAAdsManager) {
         // The SDK is going to play ads, so pause the content.
         //        contentPlayer.pause()
+        buttonStack.isHidden = true
         pause(sender: playPauseButton)
         
     }
     
     func adsManagerDidRequestContentResume(_ adsManager: IMAAdsManager) {
         // The SDK is done playing ads (at least for now), so resume the content.
+        buttonStack.isHidden = false
         if(media?.adType == .preRoll || media?.adType == .midRoll){
             play(sender: playPauseButton)
         }
@@ -382,6 +359,7 @@ class PlayerContainerViewController: UIViewController, IMAAdsLoaderDelegate, IMA
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - Public methods
 }
 
 

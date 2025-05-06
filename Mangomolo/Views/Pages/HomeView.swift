@@ -25,7 +25,6 @@ struct HomeView: View {
                     //Subscription struct that handles fetching data from keychain in order to check subscription status
                     SubscriptionCheckBox()
                         .frame(maxHeight: 80)
-                        .padding()
                     
                     // Title for Vertical Carousel
                     HStack {
@@ -41,7 +40,7 @@ struct HomeView: View {
                     ScrollView (.horizontal){
                         HStack {
                             ForEach(Constants.mediaVerticalElements) { media in
-                                MediaCellView(media: media, 
+                                MediaCellView(media: media,
                                               orientation: .vertical,
                                               enablePurpleMode: enablePurpleMode,
                                               currentIndex: $currentIndex,
@@ -74,15 +73,30 @@ struct HomeView: View {
                     }
                     
                     Spacer()
-                    Menu {
-                        Button(enablePurpleMode ? "Light Mode" : "Purple Mode", action: { enablePurpleMode.toggle() })
-                        Button("Make It Dance!!", action: { startJiggleWithAutoStop() })
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                            .font(.title)
-                            .foregroundColor(.blue)
+                    HStack{
+                        Spacer()
+                        
+                        Menu {
+                            Button(enablePurpleMode ? "Light Mode" : "Purple Mode", action: { enablePurpleMode.toggle() })
+                            Button("Make It Dance!!", action: { startJiggleWithAutoStop() })
+                        } label: {
+                            Image(systemName: "line.3.horizontal")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .padding(5)
+                        }
+                        .padding()
+                        .background(Circle().fill(LinearGradient(
+                            gradient: Gradient(colors: [Color.black, Color.gray]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                        .opacity(0.6)
+                        ))
+        
                     }
                     Spacer()
+                    
                 }
                 .padding(.horizontal, 16)
                 .navigationBarTitle(Text("Homepage"), displayMode: .automatic)
@@ -95,6 +109,7 @@ struct HomeView: View {
         }
     }
     
+    // Function called to animate the content horizontally
     func startJiggleWithAutoStop() {
         guard !isJiggling else { return }
         
@@ -113,6 +128,7 @@ struct HomeView: View {
         }
     }
     
+    // Called to stop jiggle animation
     func stopJiggle() {
         isJiggling = false
         jiggleTimer?.invalidate()
